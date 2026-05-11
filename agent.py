@@ -39,7 +39,7 @@ def _build_llm():
     provider = os.getenv("LLM_PROVIDER", "openai").lower()
 
     if provider == "ollama":
-        from langchain_community.chat_models import ChatOllama
+        from langchain_ollama import ChatOllama
 
         return ChatOllama(
             model=os.getenv("OLLAMA_MODEL", "llama3"),
